@@ -4,6 +4,8 @@ const forecast = require('./utils/forecast')
 
 const app = express()
 
+const PORT = process.env.PORT || 3000
+
 app.get('/weather', (req, res) => {
     if (!req.query.address) {
         return res.send({
@@ -30,6 +32,6 @@ app.get('/weather', (req, res) => {
     })
 
 })
-app.listen(3000, () => {
-    console.log('Listening on port 3000');
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`);
 })
